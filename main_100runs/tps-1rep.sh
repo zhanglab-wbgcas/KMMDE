@@ -1,0 +1,2 @@
+#!/bin/bash
+nohup /home/liukc/local/R_4_2_2/bin/Rscript  4tp-1rep.r >>  4tp-1rep.out & nohup /home/liukc/local/R_4_2_2/bin/Rscript  6tp-1rep.r >>  6tp-1rep.out & nohup /home/liukc/local/R_4_2_2/bin/Rscript  8tp-1rep.r >>  8tp-1rep.out & nohup /home/liukc/local/R_4_2_2/bin/Rscript  10tp-1rep.r >>  10tp-1rep.out
