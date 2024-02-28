@@ -1,0 +1,7 @@
+cd /home/liukc/project/sdc/02func_algori/revise_dre/grapedata_pro/blast_coldgo_gene
+nohup makeblastdb -in ../pep_dir/GCF_000003745.3_12X_protein.faa -dbtype prot -out vinifgenome &
+nohup blastp -query ./arab_colddata/allcoldgenes_all.fasta -db vinifgenome -out 01_vinif_cold_blast.out -evalue 1e-10 -outfmt 7 &  
+sed -n '1,3065p' 01_vinif_cold_blast.out | awk '$11<1e-10 && $3>50 {print $2}' | sort | uniq > 01all_vinif_cold_1e-10_50genelist.txt
+
+#删除文件中的无效信息，获取基因id
+bash get_geneidfrom_pepid.sh 
