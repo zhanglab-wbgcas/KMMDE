@@ -29,16 +29,16 @@ setwd('/home/liukc/project/sdc/02func_algori/revise_dre/timedata_pro/run_times')
 # tp.range <- c(4,6,8,10)
 # TP.range <- c('4TP','6TP','8TP','10TP')
 # deg.range <- c(240)#,480,960,1200,3600)
-#修改使得在命令行可以输入参数
+#
 args <- commandArgs(trailingOnly = TRUE)
 # 
-# 确保提供了所有需要的参数
+# 
 if(length(args) < 4) {
   stop("Not enough arguments. Please provide TP_range, tp_range, and replicate_range.")
 }
 
 print(args)
-# 解析命令行参数
+# 
 TP_range <- args[1]
 tp.range <- as.numeric(args[2])
 replicate.range <- as.numeric(args[3])
