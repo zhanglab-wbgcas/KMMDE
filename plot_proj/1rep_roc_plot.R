@@ -6,11 +6,11 @@ library(ggplot2)
 #source('/home/liukc/project/sdc/02func_algori/revise_dre/timedata_pro/r_compare_proj/FunPat/R/SEL.TS.AREA.R') 
 #use_python("/bin/python") #
 rm(list=ls())
-setwd('E:\\差异贡献\\sdc函数\\修改\\模拟数据\\时序数据\\rna-seq_tcComp\\teststimdata\\new_timedata\\roc_plots')
+setwd('.\\teststimdata\\new_timedata\\roc_plots')
 replicate.range <-c(1)
 deg_rang <- c(240,480,960,2400,3600)
 for(rep_num in replicate.range){
-  result <- read.csv(file=paste("rocplot_tibble_p",rep_num,"res.csv",sep="_"))  # 设置 row.names = FALSE 以避免保存行名
+  result <- read.csv(file=paste("rocplot_tibble_p",rep_num,"res.csv",sep="_"))  # 
   ####plot####
   
   colnames(result)[2] <- 'Methods'
@@ -35,7 +35,7 @@ for(rep_num in replicate.range){
     theme(axis.title.x = element_text(size = 17,margin = margin(t = 10, r = 0, b = 0, l = 0)), axis.title.y = element_text(size = 17, margin = margin(t = 0, r = 10, b = 0, l = 0))) 
     # theme(legend.text = element_text(size = 13))
   
-  #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) 去掉背景中的网格线
+  #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) 
   g  
   ggsave(g, file = "02new_1rep_rocplot.png" ,width = 9, height = 8, dpi = 300)
   
