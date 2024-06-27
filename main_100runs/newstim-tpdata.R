@@ -1,7 +1,6 @@
 # include generate stimddata and norm data
 #2019Comparative analysis of differential gene expression tools for RNA sequencing time course data
 #https://github.com/daniel-spies/rna-seq_tcComp
-# setwd('I:\\差异贡献\\sdc函数\\修改\\模拟数据\\时序数据\\rna-seq_tcComp\\teststimdata\\new_timedata\\')
 ############################################# library loading ###########################################
 library(edgeR)
 library(dplyr)
@@ -12,7 +11,6 @@ Sys.setlocale(category = "LC_ALL", locale = "en_US.UTF-8")
 
 stimdataFunction <- function(nRep,nTP,deg){
   cheung <- read.table("/home/liukc/project/sdc/02func_algori/revise_dre/timedata_pro/r_compare_proj/cheung_count_table.txt",header=TRUE,stringsAsFactors=FALSE,row.names=1)
-  #cheung <- read.table("I:\\差异贡献\\sdc函数\\修改\\模拟数据\\时序数据\\rna-seq_tcComp\\cheung_count_table.txt",header=TRUE,stringsAsFactors=FALSE,row.names=1)
   
   cheung <- cheung[rowSums(cheung)>0,]
   ############################################# estimating dispersions ###########################################
@@ -26,7 +24,7 @@ stimdataFunction <- function(nRep,nTP,deg){
   pair_f <- aggregate(.~mu,data=pair_f,FUN=mean)
   ############################################# simulation parameters ###########################################
   nSim <- 30000
-  # multTP <- c(2,3) #???设置的是时间点间隔？ 不是 是将时间点增加的倍数 例如ntp=6 ntp *multTP =12/18则 # multiplicator for time points, higher sampling rate, in theory just more replicates but depicted as time points
+  # multTP <- c(2,3)  # multiplicator for time points, higher sampling rate, in theory just more replicates but depicted as time points
   multTP <- 1
   ################################### simulating genes by drawing from a neg. binomial distribution ####################################
   
@@ -320,12 +318,12 @@ normdataFunction <- function(counts){
   # print(Rep);print(TP);print(deg)
   print(head(counts,3))
   # counts_matrix<- as.matrix(counts)
-  ############过滤在至少在75%的样本中都有表达的基因
+  ############filter######
   # keep <- rowSums(counts>0) >= floor(0.75*ncol(counts))
   # table(keep)
   # filter_count <- counts[keep,]
   # dim(filter_count)
-  #使用cpm公式进行过滤之后count值做标准化处理，使用edgeR包.加载edgeR包计算counts per millio(cpm) 表达矩阵,并对结果取log2值
+  #normalization#####
   express_cpm <- log2(cpm(counts)+1)
   print(head(express_cpm,3))
   # write.csv(express_cpm,file.path('norm_timedata',paste(norm_egder[2],lib_s,TP,Rep,deg,"both.csv",sep="_"))) #quantile median
