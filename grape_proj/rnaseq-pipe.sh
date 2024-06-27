@@ -10,7 +10,7 @@ do
 	hisat2 -p 4 --dta -x /home/liuk/grape-data/RNA_practice/data/ref/Vitis_vinifera/hisat2_index/GCF_000003745.3_12X_genomic.fna_gi -U SRR9701${i}.trim -S SRR9701${i}.sam
 	python /home/liuk/grape-data/shiulab/1.1RNA-seq_data_processing/02_keep_reads_with_quality_60_and_unique_mapping_SE.py SRR9701${i}.sam
 	samtools sort SRR9701${i}_quality_60_unique.sam -o SRR9701${i}_sorted.bam
-	stringtie -p 10 -G /home/liuk/grape-data/RNA_practice/data/ref/Vitis_vinifera/GCF_000003745.3_12X_genomic.gff -o /home/liuk/pcc-project/01RNA-seq/ranseq_results-ncbi/stringtie-b-result/SRR9701${i}.gtf -l SRR9701${i} -e SRR9701${i}_sorted.bam #-e参数要求软件只输出已知转录本的定量结果
+	stringtie -p 10 -G /home/liuk/grape-data/RNA_practice/data/ref/Vitis_vinifera/GCF_000003745.3_12X_genomic.gff -o /home/liuk/pcc-project/01RNA-seq/ranseq_results-ncbi/stringtie-b-result/SRR9701${i}.gtf -l SRR9701${i} -e SRR9701${i}_sorted.bam #
 
 done
 
