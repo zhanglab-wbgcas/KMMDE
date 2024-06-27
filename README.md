@@ -13,6 +13,7 @@ joblib
 
 # simulated data
 newstim-tpdata.R
+(Reference link：https://github.com/daniel-spies/rna-seq_tcComp/tree/master）
 
 # main
 4tp-1rep.r 
@@ -21,7 +22,6 @@ newstim-tpdata.R
 get_1rep_runtime.r
 
 # grape data 
-in grape_proj
-
+NCBI BioProject PRJNA554706.
 
 
