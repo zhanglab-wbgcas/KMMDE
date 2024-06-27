@@ -86,7 +86,7 @@ def calculate_seq(x_length):
     else:
         return 0.002
 
-# ... kernel_two_sample_test 和 MMD2u 函数定义 ...
+
 
 def process_row( row, tp, rep, x_fine,x, kernel_function, metric):
     y1 = row[:(tp * rep)].values
@@ -113,7 +113,7 @@ def kd_func(tp, rep,  normdata,  metric):
     kernel_function = 'rbf'  # 
 
     results = Parallel(n_jobs=-1)(delayed(process_row)(row, tp, rep, x_fine,x, kernel_function, metric) for index, row in normdata.iterrows())
-    # results.sort(key=lambda x: x[0])  # 确保结果按索引排序
+    # results.sort(key=lambda x: x[0])  
     MMD_list2, p_value_list2 = zip(*results)
 
     rank_df = pd.DataFrame({'gene': ["gene_" + str(i + 1) for i in range(normdata.shape[0])], 'MMD_list2': MMD_list2, 'p_value_list': p_value_list2})
