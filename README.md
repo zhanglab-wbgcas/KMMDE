@@ -2,6 +2,7 @@
 KMMDE: a non-parametric method for analyzing time course RNA-Seq data.
 
 # Requirement
+"""
 Python 3.9.16
 pandas 
 numpy 
@@ -10,7 +11,7 @@ math
 sys
 scipy
 joblib
-
+"""
 # simulated data
 newstim-tpdata.R
 (Reference link：https://github.com/daniel-spies/rna-seq_tcComp/tree/master）
