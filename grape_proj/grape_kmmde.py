@@ -110,7 +110,7 @@ tp=6
 rep=2
 kernel = 'rbf'
 
-x = np.arange(1, tp*rep + 1).tolist()  # 时间点
+x = np.arange(1, tp*rep + 1).tolist()  # 
 x_fine = np.round(np.arange(1, tp * rep + 0.001, 0.08), 2)
 # print(x);
 # print(x_fine)
@@ -118,7 +118,7 @@ x_fine = np.round(np.arange(1, tp * rep + 0.001, 0.08), 2)
 p_value_list = []
 MMD_list = []
 for index, row in data.iterrows():
-    # 遍历行中的每个元素
+    # 
     # print(index)
     gene = index
     y1 = np.array((row[:(tp * rep)]).tolist())
