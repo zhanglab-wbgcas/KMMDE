@@ -13,10 +13,11 @@ scipy
 joblib
 ```
 # simulated data
+```
 newstim-tpdata.R
 ```
 Reference link： https://github.com/daniel-spies/rna-seq_tcComp
-```
+
 # main
 4tp-1rep.r 
 
