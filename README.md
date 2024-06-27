@@ -12,19 +12,19 @@ sys
 scipy
 joblib
 ```
-# simulated data
+# Simulated data
 ```
 newstim-tpdata.R
 ```
 Reference link： https://github.com/daniel-spies/rna-seq_tcComp
 
-# main
+# Main
 4tp-1rep.r 
 
-# running time
+# Running time
 get_1rep_runtime.r
 
-# grape data 
+# Grape data 
 NCBI BioProject PRJNA554706.
 
 
