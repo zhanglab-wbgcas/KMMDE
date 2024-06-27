@@ -6,11 +6,11 @@ library(ggplot2)
 #source('/home/liukc/project/sdc/02func_algori/revise_dre/timedata_pro/r_compare_proj/FunPat/R/SEL.TS.AREA.R') 
 #use_python("/bin/python") #
 rm(list=ls())
-setwd('E:\\差异贡献\\sdc函数\\修改\\模拟数据\\时序数据\\rna-seq_tcComp\\teststimdata\\new_timedata\\roc_plots')
+setwd('.\\teststimdata\\new_timedata\\roc_plots')
 replicate.range <-c(2)
 deg_rang <- c(240,480,960,2400,3600)
 for(rep_num in replicate.range){
-  result <- read.csv(file=paste("rocplot_tibble_p",rep_num,"res.csv",sep="_"))  # 设置 row.names = FALSE 以避免保存行名
+  result <- read.csv(file=paste("rocplot_tibble_p",rep_num,"res.csv",sep="_"))  # 
   ####plot####
   
   colnames(result)[2] <- 'Methods'
