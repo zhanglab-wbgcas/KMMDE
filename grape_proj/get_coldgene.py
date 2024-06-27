@@ -6,10 +6,10 @@ import time
 import sys
 import numpy as np
 
-#读取txt文件 并去除重复
+#
 # txt_dir = '/home/liukc/project/sdc/02func_algori/revise_dre/grapedata_pro/blast_coldgo_gene/gene_ids.txt'
 txt_dir = '/home/liukc/project/sdc/02func_algori/revise_dre/grapedata_pro/blast_coldgo_gene/01allcold_1e-10_50gene_ids.txt'
-#读取kmmde的结果 以及特异结果
+#
 kmmde_dir = '/home/liukc/project/sdc/02func_algori/revise_dre/grapedata_pro/25kmmde_grape_res.csv'
 kmmde_spec_dir ='/home/liukc/project/sdc/02func_algori/revise_dre/grapedata_pro/KMMDE_spec.csv'
 edger_dir ='/home/liukc/project/sdc/02func_algori/revise_dre/grapedata_pro/grape_edger_res.csv'
@@ -28,7 +28,7 @@ print(len)
 
 txt_dat.columns= ['gene']
 print(txt_dat)
-#去除重复
+#delete replicate
 txt_list = txt_dat['gene']
 org_len = len(txt_list)
 print(org_len)
@@ -43,7 +43,7 @@ for i in txt_list:
 after_len = len(txt_rm)
 print(after_len)
 
-#读取kmmde的结果 以及特异结果
+#
 kmmde_dat = pd.read_csv(kmmde_dir)
 # print(kmmde_dat.head())
 
@@ -51,7 +51,7 @@ kmmde_spec_dat =pd.read_csv(kmmde_spec_dir,encoding='gb18030',index_col = 0)
 # print(kmmde_spec_dat.head())
 kmmde_spec_dat.columns= ['gene']
 
-#看交集
+# intersection
 kmmde_cold = list(set(kmmde_spec_dat['gene']) & set(txt_dat['gene']))
 print(len(kmmde_cold))
 
@@ -76,9 +76,6 @@ impulsede2_spec_dat.columns= ['gene']
 impulsede2_cold = list(set(impulsede2_spec_dat['gene']) & set(txt_dat['gene']))
 print(len(impulsede2_cold))
 
-# edger_dat =
-# deseq2_dat =
-# funpat_dat =
-# impulsede2_dat =
+
 
 
