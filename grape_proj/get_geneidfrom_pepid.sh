@@ -14,7 +14,7 @@ do
   gene_idlist+=("$gene_id")
 done < "$gene_file"
 
-# 将数组内容写入txt文件
+#
 printf '%s\n' "${gene_idlist[@]}" > 01allcold_1e-10_50gene_ids.txt
 
 
